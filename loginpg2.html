@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body{
+    background-color: rgb(252, 252, 252);
+}
+#container{
+    background-color: rgb(251, 251, 251);
+    margin: 100px auto;
+    padding: 15px;
+    width: 200px;
+    height: 270px;
+    box-shadow: 0 0 0 1.5px rgba(206, 204, 204, 0.5);
+    border-radius: 8px;
+}
+h2{
+    margin-bottom: 0;
+}
+p{
+    margin-top: 0;
+}
+
+#uName{
+    padding: 5px 10px;
+    width: 180px;
+    margin-bottom: 10px;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.17);
+    border-radius: 3px;
+}
+#pWord{
+    padding: 5px 10px;
+    width: 180px;
+    margin-bottom: 20px;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.17);
+    border-radius: 3px;
+}
+#nuRegister{
+    text-align: center;
+    text-decoration: none;
+}
+button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 195px;
+    padding: 5px 10px;
+    background-color: blue;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 12px;
+}
+button:hover{
+    color: black;
+    cursor: pointer;
+    font-size: large;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 11px;
+}
+a:hover{
+    color: black;
+    cursor: pointer;
+    font-size: large;
+}
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <h2>Login</h2>
+        <p>to get started</p>
+
+        <div class="input">
+            <input type="text" id="uName" placeholder="username"><br>
+            <input type="text" id="pWord" placeholder="password">
+        </div>
+
+        <a href="#" id="fPassword">Forget Password?</a><br>
+
+        <button>Caption</button><br>
+
+        <p id="nuRegister"><a href="#">New User Register</a></p>
+    </div>
+    <script>
+        // Get elements
+        var uNameInput = document.getElementById("uName");
+        var pWordInput = document.getElementById("pWord");
+        var loginButton = document.getElementById("loginButton");
+
+        // Check if there are stored values in localStorage
+        if (localStorage.getItem("username")) {
+            uNameInput.value = localStorage.getItem("username");
+        }
+        
+        if (localStorage.getItem("password")) {
+            pWordInput.value = localStorage.getItem("password");
+        }
+
+        // Add click event listener to the login button
+        loginButton.addEventListener("click", function() {
+            // Store the values of the username and password input fields in localStorage
+            localStorage.setItem("username", uNameInput.value);
+            localStorage.setItem("password", pWordInput.value);
+        });
+    </script>
+</body>
+</html>
